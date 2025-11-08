@@ -8,6 +8,9 @@
 # Formati per JavaScript
 !**/*.js
 
+# Formati per c
+!**/*.c
+
 # File geerici
 !LICENSE
 !*/
