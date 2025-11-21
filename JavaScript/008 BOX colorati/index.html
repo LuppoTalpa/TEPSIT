@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cambia Colore e Stile</title>
+    <style>
+        .box {
+            width: 150px;
+            height: 150px;
+            margin: 10px;
+            display: inline-block;
+            text-align: center;
+            line-height: 150px;
+            font-weight: bold;
+            border: 2px solid #333;
+        }
+        
+        .rosso {
+            background-color: #ff6b6b;
+        }
+        
+        .verde {
+            background-color: #51cf66;
+        }
+        
+        .blu {
+            background-color: #339af0;
+        }
+        
+        .giallo {
+            background-color: #ffd43b;
+        }
+        
+        .grande {
+            width: 200px;
+            height: 200px;
+            line-height: 200px;
+            font-size: 20px;
+        }
+        
+        .rotondo {
+            border-radius: 50%;
+        }
+        
+        .ombra {
+            box-shadow: 5px 5px 15px rgba(0,0,0,0.3);
+        }
+        
+        button {
+            margin: 5px;
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        
+        .container {
+            text-align: center;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Cambia Colore e Stile</h1>
+        
+        <div>
+            <button onclick="cambiaColore()">Cambia Colore</button>
+            <button onclick="cambiaStile()">Cambia Stile</button>
+            <button onclick="resetTutto()">Reset</button>
+            <button onclick="contaBox()">Conta Box</button>
+        </div>
+        
+        <div id="contenitoreBox">
+            <div class="box rosso">Box 1</div>
+            <div class="box verde">Box 2</div>
+            <div class="box blu">Box 3</div>
+            <div class="box giallo">Box 4</div>
+        </div>
+        
+        <div id="risultato" style="margin-top: 20px; font-size: 18px;"></div>
+    </div>
+	<script src="script.js"></script>
+    
+</body>
+</html>

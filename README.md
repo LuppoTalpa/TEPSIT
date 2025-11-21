@@ -5,6 +5,7 @@
 ![HTML](https://img.shields.io/badge/HTML-FF5722?logo=html5&logoColor=white)
 ![CSS](https://img.shields.io/badge/CSS-264DE4?logo=css&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black)
+![C](https://img.shields.io/badge/C-264DE4?logo=c&logoColor=white)
 
 Questa repository contiene gli esercizi di **TEPSIT**, svolti a scuola con **HTML**, **CSS** e **JavaScript**.  
 Ogni file rappresenta un singolo esercizio, scritto in modo chiaro e con commenti quando servono.
