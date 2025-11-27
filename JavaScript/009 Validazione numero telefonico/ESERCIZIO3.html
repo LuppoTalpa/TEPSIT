@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Validazione Telefono</title>
+    <style>
+      .container {
+        max-width: 400px;
+        margin: 50px auto;
+        padding: 20px;
+        border: 2px solid #333;
+        border-radius: 10px;
+        text-align: center;
+      }
+
+      input {
+        width: 200px;
+        padding: 10px;
+        font-size: 16px;
+        margin: 10px 0;
+      }
+
+      button {
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        border-radius: 4px;
+      }
+
+      .messaggio {
+        margin-top: 15px;
+        padding: 10px;
+        font-weight: bold;
+        display: none;
+      }
+
+      .testo-successo {
+        color: green;
+        font-size: 20px;
+        background-color: #e8f5e8;
+        border: 2px solid green;
+        animation: successAnimation 1s ease-in-out;
+      }
+
+      .testo-errore {
+        color: red;
+        font-size: 18px;
+        background-color: #ffe8e8;
+        border: 2px solid red;
+        animation: errorAnimation 0.5s ease-in-out;
+      }
+
+      @keyframes successAnimation {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.1);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+
+      @keyframes errorAnimation {
+        0% {
+          transform: translateX(0);
+        }
+        25% {
+          transform: translateX(-10px);
+        }
+        50% {
+          transform: translateX(10px);
+        }
+        75% {
+          transform: translateX(-10px);
+        }
+        100% {
+          transform: translateX(0);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Validazione Numero di Telefono</h1>
+
+      <div>
+        <input
+          type="text"
+          id="telefono"
+          placeholder="Inserisci il numero di telefono"
+        />
+      </div>
+
+      <button onclick="validaTelefono()">Verifica Telefono</button>
+      <button onclick="resetTutto()">Reset</button>
+
+      <div id="messaggio" class="messaggio"></div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
