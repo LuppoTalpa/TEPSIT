@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Filtro Prodotti</title>
+    <style>
+      .prodotto {
+        padding: 15px;
+        margin: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        display: inline-block;
+      }
+
+      .elettronica {
+        background-color: #e3f2fd;
+      }
+
+      .vestiti {
+        background-color: #f3e5f5;
+      }
+
+      .libri {
+        background-color: #e8f5e8;
+      }
+
+      .nascondi {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Catalogo Prodotti</h1>
+
+    <div class="prodotto elettronica">Smartphone</div>
+    <div class="prodotto vestiti">Maglietta</div>
+    <div class="prodotto libri">Romanzo</div>
+    <div class="prodotto elettronica">Laptop</div>
+    <div class="prodotto vestiti">Jeans</div>
+    <div class="prodotto libri">Manuale</div>
+
+    <br /><br />
+
+    <button onclick="mostraTutti()">Mostra Tutti</button>
+    <button onclick="filtraElettronica()">Solo Elettronica</button>
+    <button onclick="filtraAbbigliamento()">Solo Abbigliamento</button>
+    <button onclick="filtraLibri()">Solo Libri</button>
+
+    <script src="script.js"></script>
+  </body>
+</html>
