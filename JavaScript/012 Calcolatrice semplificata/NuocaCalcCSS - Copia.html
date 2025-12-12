@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Calcolatrice Semplificata</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0px;
+        position: relative;
+      }
+      #calc input {
+        width: 40px;
+        height: 40px;
+        margin: 1px;
+        font-size: 15px;
+        background-color: #eee;
+        border: none;
+      }
+      #calc input:hover {
+        background-color: #ccc;
+      }
+      #calc input:active {
+        background-color: #aaa;
+      }
+      #calcolatrice {
+        background-color: #eee;
+        width: fit-content;
+        padding: 10px 5px;
+        box-shadow: 1px 1px 7px #999;
+        margin: 70px;
+      }
+      .area {
+        width: 166px;
+        height: 30px;
+        padding: 2px;
+        text-align: right;
+        font-size: 20px;
+      }
+    </style>
+  </head>
+  <body bgcolor="yellow">
+    <h1>Calcolatrice Semplificata</h1>
+
+    <div id="calcolatrice">
+      <input class="area" id="monitor" placeholder="0"/>
+      <table id="calc">
+        <tr>
+          <td><input type="button" value="C" onclick="del();" /></td>
+          <td><input type="button" value="◄" onclick="cancella();" /></td>
+          <td><input type="button" value="%" onclick="perc();" /></td>
+          <td>
+            <input type="button" value="&divide;" onclick="operazione('/');" />
+          </td>
+        </tr>
+        <tr>
+          <td><input type="button" value="7" onclick="digit(7);" /></td>
+          <td><input type="button" value="8" onclick="digit(8);" /></td>
+          <td><input type="button" value="9" onclick="digit(9);" /></td>
+          <td><input type="button" value="x" onclick="operazione('*');" /></td>
+        </tr>
+        <tr>
+          <td><input type="button" value="4" onclick="digit(4);" /></td>
+          <td><input type="button" value="5" onclick="digit(5);" /></td>
+          <td><input type="button" value="6" onclick="digit(6);" /></td>
+          <td><input type="button" value="-" onclick="operazione('-');" /></td>
+        </tr>
+        <tr>
+          <td><input type="button" value="1" onclick="digit(1);" /></td>
+          <td><input type="button" value="2" onclick="digit(2);" /></td>
+          <td><input type="button" value="3" onclick="digit(3);" /></td>
+          <td><input type="button" value="+" onclick="operazione('+');" /></td>
+        </tr>
+        <tr>
+          <td><input type="button" value="0" onclick="digit(0);" /></td>
+          <td><input type="button" value="00" onclick="digit('00');" /></td>
+          <td><input type="button" value="," onclick="digit('.');" /></td>
+          <td><input type="button" value="=" onclick="risultato();" /></td>
+        </tr>
+      </table>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
