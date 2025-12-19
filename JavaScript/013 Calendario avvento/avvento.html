@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calendario dell'Avvento</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        background-color: #f0f0f0;
+        padding: 20px;
+      }
+
+      h1 {
+        color: #0066cc;
+      }
+
+      .contenitore-calendario {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        gap: 10px;
+        max-width: 800px;
+        margin: 20px auto;
+      }
+
+      .casella-giorno {
+        width: 80px;
+        height: 80px;
+        border: 2px solid #333;
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+        background-color: white;
+        color: #333;
+        cursor: pointer;
+      }
+
+      .giorno-passato {
+        background-color: yellow;
+      }
+
+      .giorno-futuro {
+        background-color: #e0e0e0;
+        color: #999;
+        cursor: not-allowed;
+      }
+
+      .giorno-corrente {
+        background-color: #ffcc00;
+        border-color: #ff6600;
+      }
+
+      .numero-giorno {
+        font-size: 24px;
+      }
+
+      .testo-mese {
+        font-size: 12px;
+        margin-top: 5px;
+      }
+
+      .finestra-popup {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: white;
+        padding: 20px;
+        border: 3px solid #0066cc;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+        z-index: 1000;
+        max-width: 400px;
+        width: 90%;
+      }
+
+      .sovrapposizione-popup {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 999;
+      }
+
+      .titolo-popup {
+        color: #0066cc;
+        margin-top: 0;
+      }
+
+      .messaggio-popup {
+        font-size: 16px;
+        line-height: 1.5;
+        margin: 15px 0;
+      }
+
+      .pulsante-chiudi {
+        background-color: #0066cc;
+        color: white;
+        border: none;
+        padding: 8px 15px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 14px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Calendario dell'Avvento Dicembre</h1>
+
+    <div id="contenitore-calendario" class="contenitore-calendario">
+      <div class="casella-giorno" onclick="apriMessaggioGiorno(1)">
+        <div class="numero-giorno">1</div>
+        <div class="testo-mese">Dicembre</div>
+      </div>
+      <div class="casella-giorno" onclick="apriMessaggioGiorno(2)">
+        <div class="numero-giorno">2</div>
+        <div class="testo-mese">Dicembre</div>
+      </div>
+      <div class="casella-giorno" onclick="apriMessaggioGiorno(3)">
+        <div class="numero-giorno">3</div>
+        <div class="testo-mese">Dicembre</div>
+      </div>
+      <div class="casella-giorno" onclick="apriMessaggioGiorno(4)">
+        <div class="numero-giorno">4</div>
+        <div class="testo-mese">Dicembre</div>
+      </div>
+      <div class="casella-giorno" onclick="apriMessaggioGiorno(5)">
+        <div class="numero-giorno">5</div>
+        <div class="testo-mese">Dicembre</div>
+      </div>
+      <div class="casella-giorno" onclick="apriMessaggioGiorno(6)">
+        <div class="numero-giorno">6</div>
+        <div class="testo-mese">Dicembre</div>
+      </div>
+      <div class="casella-giorno" onclick="apriMessaggioGiorno(7)">
+        <div class="numero-giorno">7</div>
+        <div class="testo-mese">Dicembre</div>
+      </div>
+      <div class="casella-giorno" onclick="apriMessaggioGiorno(8)">
+        <div class="numero-giorno">8</div>
+        <div class="testo-mese">Dicembre</div>
+      </div>
+      <div class="casella-giorno" onclick="apriMessaggioGiorno(9)">
+        <div class="numero-giorno">9</div>
+        <div class="testo-mese">Dicembre</div>
+      </div>
+      <div class="casella-giorno" onclick="apriMessaggioGiorno(10)">
+        <div class="numero-giorno">10</div>
+        <div class="testo-mese">Dicembre</div>
+      </div>
+      <div class="casella-giorno" onclick="apriMessaggioGiorno(11)">
+        <div class="numero-giorno">11</div>
+        <div class="testo-mese">Dicembre</div>
+      </div>
+      <div class="casella-giorno" onclick="apriMessaggioGiorno(12)">
+        <div class="numero-giorno">12</div>
+        <div class="testo-mese">Dicembre</div>
+      </div>
+      <div class="casella-giorno" onclick="apriMessaggioGiorno(13)">
+        <div class="numero-giorno">13</div>
+        <div class="testo-mese">Dicembre</div>
+      </div>
+      <div class="casella-giorno" onclick="apriMessaggioGiorno(14)">
+        <div class="numero-giorno">14</div>
+        <div class="testo-mese">Dicembre</div>
+      </div>
+      <div class="casella-giorno" onclick="apriMessaggioGiorno(15)">
+        <div class="numero-giorno">15</div>
+        <div class="testo-mese">Dicembre</div>
+      </div>
+      <div class="casella-giorno" onclick="apriMessaggioGiorno(16)">
+        <div class="numero-giorno">16</div>
+        <div class="testo-mese">Dicembre</div>
+      </div>
+      <div class="casella-giorno" onclick="apriMessaggioGiorno(17)">
+        <div class="numero-giorno">17</div>
+        <div class="testo-mese">Dicembre</div>
+      </div>
+      <div class="casella-giorno" onclick="apriMessaggioGiorno(18)">
+        <div class="numero-giorno">18</div>
+        <div class="testo-mese">Dicembre</div>
+      </div>
+      <div class="casella-giorno" onclick="apriMessaggioGiorno(19)">
+        <div class="numero-giorno">19</div>
+        <div class="testo-mese">Dicembre</div>
+      </div>
+      <div class="casella-giorno" onclick="apriMessaggioGiorno(20)">
+        <div class="numero-giorno">20</div>
+        <div class="testo-mese">Dicembre</div>
+      </div>
+      <div class="casella-giorno" onclick="apriMessaggioGiorno(21)">
+        <div class="numero-giorno">21</div>
+        <div class="testo-mese">Dicembre</div>
+      </div>
+      <div class="casella-giorno" onclick="apriMessaggioGiorno(22)">
+        <div class="numero-giorno">22</div>
+        <div class="testo-mese">Dicembre</div>
+      </div>
+      <div class="casella-giorno" onclick="apriMessaggioGiorno(23)">
+        <div class="numero-giorno">23</div>
+        <div class="testo-mese">Dicembre</div>
+      </div>
+      <div class="casella-giorno" onclick="apriMessaggioGiorno(24)">
+        <div class="numero-giorno">24</div>
+        <div class="testo-mese">Dicembre</div>
+      </div>
+      <div class="casella-giorno">
+        <div class="numero-giorno">25</div>
+        <div class="testo-mese">Dicembre</div>
+      </div>
+    </div>
+
+    <!-- Popup per mostrare i messaggi -->
+    <div id="finestra-messaggio" class="finestra-popup">
+      <!-- mostriamo numero giorno nella class titolo-popup-->
+      <h2 id="titolo-giorno-popup" class="titolo-popup"></h2>
+
+      <!-- mostriamo messaggio del giorno nella class messaggio-popup-->
+      <p id="messaggio-popup-testo" class="messaggio-popup"></p>
+      <button class="pulsante-chiudi" onclick="chiudiPopup()">Chiudi</button>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
